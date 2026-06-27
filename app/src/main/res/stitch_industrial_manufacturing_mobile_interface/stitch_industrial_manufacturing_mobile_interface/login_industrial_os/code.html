@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Login - Sistem Manufaktur</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#dbc3a6",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1b1c1d",
+                        "on-secondary-container": "#406b71",
+                        "surface-dim": "#dbd9db",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f2f0f1",
+                        "background": "#fbf9fa",
+                        "on-surface-variant": "#44474c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#261907",
+                        "surface-variant": "#e4e2e3",
+                        "on-tertiary-container": "#a38d74",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#eae7e9",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#bdeaf2",
+                        "primary": "#061625",
+                        "secondary-container": "#bdeaf2",
+                        "on-primary-fixed": "#0d1d2b",
+                        "inverse-primary": "#b8c8dc",
+                        "secondary-fixed-dim": "#a2ced5",
+                        "surface": "#fbf9fa",
+                        "primary-fixed": "#d4e4f8",
+                        "surface-container": "#efedee",
+                        "on-error": "#ffffff",
+                        "secondary": "#3a656b",
+                        "inverse-surface": "#303032",
+                        "on-primary-fixed-variant": "#394858",
+                        "outline-variant": "#c4c6cc",
+                        "surface-bright": "#fbf9fa",
+                        "on-secondary-fixed-variant": "#204d53",
+                        "on-primary-container": "#8392a5",
+                        "tertiary-fixed": "#f8dec1",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#516071",
+                        "on-tertiary-fixed-variant": "#55442e",
+                        "surface-container-low": "#f5f3f4",
+                        "on-surface": "#1b1c1d",
+                        "outline": "#74777c",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#001f23",
+                        "primary-fixed-dim": "#b8c8dc",
+                        "primary-container": "#1c2b3a",
+                        "tertiary": "#1f1303",
+                        "surface-container-highest": "#e4e2e3",
+                        "tertiary-container": "#362714",
+                        "brand-bg": "#EDE8DC",
+                        "brand-teal": "#073A40",
+                        "brand-navy": "#1C2B3A",
+                        "brand-card": "#F2F2F2",
+                        "brand-gray": "#A69F97"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "btn": "12px"
+                    },
+                    "spacing": {
+                        "component-padding-x": "16px",
+                        "margin-tablet": "24px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "component-padding-y": "12px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-md": ["JetBrains Mono"],
+                        "body-md": ["Work Sans"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        .custom-shadow {
+            box-shadow: 0px 4px 12px rgba(28, 43, 58, 0.12);
+        }
+        input:focus {
+            box-shadow: none !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-brand-bg text-on-surface antialiased min-h-screen flex flex-col justify-center items-center px-margin-mobile">
+<!-- Canvas (Main Content) - Suppressing TopAppBar and BottomNavBar as this is a linear transactional screen -->
+<main class="w-full max-w-md bg-brand-card rounded-lg custom-shadow p-6 flex flex-col relative overflow-hidden">
+<!-- Subtle Top Accent -->
+<div class="absolute top-0 left-0 w-full h-1 bg-tertiary-container"></div>
+<!-- Logo Area -->
+<div class="flex flex-col items-center justify-center mb-8 mt-4">
+<div class="w-16 h-16 bg-brand-navy rounded-lg flex items-center justify-center mb-4 shadow-md">
+<span class="material-symbols-outlined fill text-on-primary text-4xl" data-icon="factory">factory</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-brand-navy text-center">SISTEM MANUFAKTUR</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 text-center">Industrial Operating System</p>
+</div>
+<!-- Login Form -->
+<form class="flex flex-col gap-6">
+<!-- Input Group: Username -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-brand-navy uppercase tracking-wider" for="username">Operator ID</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">badge</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-brand-gray rounded text-on-surface font-body-lg text-body-lg focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition-colors h-12" id="username" placeholder="Enter ID" type="text"/>
+</div>
+</div>
+<!-- Input Group: Password -->
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-brand-navy uppercase tracking-wider" for="password">Access Code</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">lock</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-brand-gray rounded text-on-surface font-body-lg text-body-lg focus:border-brand-teal focus:ring-2 focus:ring-brand-teal/20 transition-colors h-12" id="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Role Selector (Segmented Control) -->
+<div class="flex flex-col gap-2 mt-2">
+<span class="font-label-md text-label-md text-brand-navy uppercase tracking-wider">Select Role</span>
+<div class="flex bg-surface-container-highest p-1 rounded-lg">
+<button class="flex-1 py-2 px-2 text-center rounded-md bg-brand-navy text-on-primary font-label-md text-label-md transition-all shadow-sm" type="button">
+                        Operator
+                    </button>
+<button class="flex-1 py-2 px-2 text-center rounded-md text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-all" type="button">
+                        Supervisor
+                    </button>
+<button class="flex-1 py-2 px-2 text-center rounded-md text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-all" type="button">
+                        Kurir
+                    </button>
+</div>
+</div>
+<!-- Action Area -->
+<div class="mt-4 flex flex-col gap-4">
+<button class="w-full h-12 bg-gradient-to-r from-brand-navy to-brand-teal text-on-primary font-headline-sm text-headline-sm rounded-btn shadow-md hover:opacity-90 transition-opacity flex justify-center items-center gap-2" type="button">
+<span class="material-symbols-outlined" data-icon="login">login</span>
+                    Authenticate
+                </button>
+<div class="text-center">
+<a class="font-body-md text-body-md text-secondary hover:text-brand-teal transition-colors" href="#">Emergency Access Override</a>
+</div>
+</div>
+</form>
+<!-- Version Tag -->
+<div class="mt-8 text-center border-t border-outline-variant pt-4">
+<span class="font-label-md text-label-md text-outline">v2.4.1-stable</span>
+</div>
+</main>
+<script>
+        // Simple script for segmented button interaction demonstration
+        document.addEventListener('DOMContentLoaded', () => {
+            const roleButtons = document.querySelectorAll('.flex.bg-surface-container-highest button');
+            
+            roleButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    // Reset all
+                    roleButtons.forEach(b => {
+                        b.className = 'flex-1 py-2 px-2 text-center rounded-md text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-all';
+                    });
+                    
+                    // Set active
+                    e.target.className = 'flex-1 py-2 px-2 text-center rounded-md bg-brand-navy text-on-primary font-label-md text-label-md transition-all shadow-sm';
+                });
+            });
+        });
+    </script>
+</body></html>

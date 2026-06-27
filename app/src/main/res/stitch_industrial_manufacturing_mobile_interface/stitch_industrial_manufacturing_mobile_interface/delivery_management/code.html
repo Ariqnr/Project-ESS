@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kurir - Pengiriman</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined', sans-serif;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#dbc3a6",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1b1c1d",
+                        "on-secondary-container": "#406b71",
+                        "surface-dim": "#dbd9db",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f2f0f1",
+                        "background": "#fbf9fa",
+                        "on-surface-variant": "#44474c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#261907",
+                        "surface-variant": "#e4e2e3",
+                        "on-tertiary-container": "#a38d74",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#eae7e9",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#bdeaf2",
+                        "primary": "#061625",
+                        "secondary-container": "#bdeaf2",
+                        "on-primary-fixed": "#0d1d2b",
+                        "inverse-primary": "#b8c8dc",
+                        "secondary-fixed-dim": "#a2ced5",
+                        "surface": "#fbf9fa",
+                        "primary-fixed": "#d4e4f8",
+                        "surface-container": "#efedee",
+                        "on-error": "#ffffff",
+                        "secondary": "#3a656b",
+                        "inverse-surface": "#303032",
+                        "on-primary-fixed-variant": "#394858",
+                        "outline-variant": "#c4c6cc",
+                        "surface-bright": "#fbf9fa",
+                        "on-secondary-fixed-variant": "#204d53",
+                        "on-primary-container": "#8392a5",
+                        "tertiary-fixed": "#f8dec1",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#516071",
+                        "on-tertiary-fixed-variant": "#55442e",
+                        "surface-container-low": "#f5f3f4",
+                        "on-surface": "#1b1c1d",
+                        "outline": "#74777c",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#001f23",
+                        "primary-fixed-dim": "#b8c8dc",
+                        "primary-container": "#1c2b3a",
+                        "tertiary": "#1f1303",
+                        "surface-container-highest": "#e4e2e3",
+                        "tertiary-container": "#362714"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "component-padding-x": "16px",
+                        "margin-tablet": "24px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "component-padding-y": "12px",
+                        "margin-mobile": "16px"
+                    },
+                    fontFamily: {
+                        "headline-sm": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-md": ["JetBrains Mono"],
+                        "body-md": ["Work Sans"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Work Sans"]
+                    },
+                    fontSize: {
+                        "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+                        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-[80px] md:pb-0 font-body-md">
+<!-- TopAppBar -->
+<header class="bg-primary dark:bg-primary-container shadow-[0px_4px_12px_rgba(28,43,58,0.12)] docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center w-full px-margin-mobile h-14">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-primary">factory</span>
+<span class="text-headline-sm font-headline-sm font-bold tracking-tight text-on-primary">INDUSTRIAL OS</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-primary text-sm">person</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="p-margin-mobile md:p-margin-tablet max-w-4xl mx-auto space-y-6">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary-container mb-2">Active Deliveries</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your current logistics routes and operations.</p>
+</div>
+<div class="hidden md:flex gap-2">
+<button class="px-4 py-2 bg-surface-container rounded-lg text-primary font-label-md text-label-md hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> Filter
+                </button>
+</div>
+</div>
+<!-- Global Status Flow Indicator -->
+<div class="bg-surface p-6 rounded-xl shadow-[0px_4px_12px_rgba(28,43,58,0.12)] border border-surface-variant mb-6 hidden md:block">
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-4">Route Progress Overview</h2>
+<div class="flex items-center justify-between relative">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-surface-variant -z-10 rounded-full"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm border-2 border-surface">
+<span class="material-symbols-outlined text-[16px]">inventory_2</span>
+</div>
+<span class="font-label-md text-label-md text-primary">Siap Kirim</span>
+</div>
+<!-- Line Active -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 h-1 bg-secondary -z-10 rounded-full"></div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed-dim border-2 border-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shadow-sm">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Dalam Perjalanan</span>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center gap-2 bg-surface px-2">
+<div class="w-8 h-8 rounded-full bg-surface-container border-2 border-surface-variant flex items-center justify-center text-outline shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+</div>
+<span class="font-label-md text-label-md text-outline">Terkirim</span>
+</div>
+</div>
+</div>
+<!-- Deliveries List -->
+<div class="space-y-4">
+<!-- Delivery Card 1 -->
+<article class="bg-surface rounded-xl shadow-[0px_4px_12px_rgba(28,43,58,0.12)] overflow-hidden relative">
+<!-- Accent Line -->
+<div class="absolute top-0 left-0 w-full h-[4px] bg-[#A69076]"></div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant mb-1 block">ID: DLV-88392A</span>
+<h3 class="font-headline-sm text-headline-sm text-primary-container">PT. Teknik Mandiri Jaya</h3>
+</div>
+<span class="bg-[#FFC107]/20 text-[#5D4037] px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 border border-[#FFC107]/30">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> Dalam Perjalanan
+                        </span>
+</div>
+<div class="flex items-start gap-3 mb-6">
+<span class="material-symbols-outlined text-outline mt-0.5">location_on</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Jl. Industri Raya No. 45, Kawasan MM2100</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Cikarang Barat, Bekasi 17530</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-surface-variant/50">
+<button class="flex-1 bg-primary text-on-primary py-3 px-4 rounded-[12px] font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#073A40] focus:ring-offset-2">
+<span class="material-symbols-outlined text-[18px]">update</span> Update Status
+                        </button>
+<button class="flex-1 border-[1.5px] border-[#4E7391] text-primary-container py-3 px-4 rounded-[12px] font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-surface-container transition-colors focus:outline-none focus:ring-2 focus:ring-[#073A40] focus:ring-offset-2">
+<span class="material-symbols-outlined text-[18px]">visibility</span> Cek Data
+                        </button>
+</div>
+</div>
+</article>
+<!-- Delivery Card 2 -->
+<article class="bg-surface rounded-xl shadow-[0px_4px_12px_rgba(28,43,58,0.12)] overflow-hidden relative">
+<!-- Accent Line -->
+<div class="absolute top-0 left-0 w-full h-[4px] bg-primary"></div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant mb-1 block">ID: DLV-88393B</span>
+<h3 class="font-headline-sm text-headline-sm text-primary-container">CV. Logistik Nusantara</h3>
+</div>
+<span class="bg-surface-container text-on-surface px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 border border-surface-variant">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span> Siap Kirim
+                        </span>
+</div>
+<div class="flex items-start gap-3 mb-6">
+<span class="material-symbols-outlined text-outline mt-0.5">location_on</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Gudang Blok C-12, Pelabuhan Tanjung Priok</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Jakarta Utara 14310</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-surface-variant/50">
+<button class="flex-1 bg-primary text-on-primary py-3 px-4 rounded-[12px] font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-[#073A40] focus:ring-offset-2">
+<span class="material-symbols-outlined text-[18px]">update</span> Update Status
+                        </button>
+<button class="flex-1 border-[1.5px] border-[#4E7391] text-primary-container py-3 px-4 rounded-[12px] font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-surface-container transition-colors focus:outline-none focus:ring-2 focus:ring-[#073A40] focus:ring-offset-2">
+<span class="material-symbols-outlined text-[18px]">visibility</span> Cek Data
+                        </button>
+</div>
+</div>
+</article>
+<!-- Delivery Card 3 (Completed Example) -->
+<article class="bg-surface rounded-xl shadow-[0px_4px_12px_rgba(28,43,58,0.12)] overflow-hidden relative opacity-75">
+<!-- Accent Line -->
+<div class="absolute top-0 left-0 w-full h-[4px] bg-[#4CAF50]"></div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant mb-1 block">ID: DLV-88390X</span>
+<h3 class="font-headline-sm text-headline-sm text-primary-container">Bapak Budi Santoso</h3>
+</div>
+<span class="bg-[#4CAF50]/20 text-[#1B5E20] px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1 border border-[#4CAF50]/30">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Terkirim
+                        </span>
+</div>
+<div class="flex items-start gap-3 mb-6">
+<span class="material-symbols-outlined text-outline mt-0.5">location_on</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface">Perumahan Graha Asri Blok D4/12</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Cikarang Baru, Bekasi 17530</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-surface-variant/50">
+<button class="w-full border-[1.5px] border-[#4E7391] text-primary-container py-3 px-4 rounded-[12px] font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-surface-container transition-colors focus:outline-none focus:ring-2 focus:ring-[#073A40] focus:ring-offset-2">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span> Lihat Bukti
+                        </button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface dark:bg-surface-container-lowest border-t border-outline-variant shadow-[0px_-4px_12px_rgba(28,43,58,0.08)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<span class="font-label-md text-label-md mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-2xl px-5 py-1 hover:bg-surface-container-high transition-all scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[24px]">precision_manufacturing</span>
+<span class="font-label-md text-label-md mt-1">Operations</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">barcode_scanner</span>
+<span class="font-label-md text-label-md mt-1">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">monitoring</span>
+<span class="font-label-md text-label-md mt-1">Supervisor</span>
+</a>
+</nav>
+</body></html>
