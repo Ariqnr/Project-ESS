@@ -5,7 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Operation::class], version = 1, exportSchema = false)
+@Database(
+    entities = [Operation::class, Operator::class, Supervisor::class, StaffWarehouse::class],
+    version = 1,
+    exportSchema = false
+)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun operationDao(): OperationDao
 
@@ -18,8 +22,11 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "industrial_os_db"
-                ).build()
+                    "manufaktur.db"
+                )
+                .createFromAsset("manufaktur.db")
+                .fallbackToDestructiveMigration()
+                .build()
                 INSTANCE = instance
                 instance
             }
