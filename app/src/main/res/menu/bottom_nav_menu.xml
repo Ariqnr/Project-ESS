@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@android:drawable/ic_menu_today"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/navigation_warehouse"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="Gudang" />
+    <item
+        android:id="@+id/navigation_production"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Produksi" />
+    <item
+        android:id="@+id/navigation_monitoring"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="Monitoring" />
+</menu>
