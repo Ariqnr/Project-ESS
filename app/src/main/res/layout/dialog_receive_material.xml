@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="24dp"
+    android:background="@drawable/bg_bottom_sheet">
+
+    <!-- Bottom Sheet Drag Handle for Material 3 look -->
+    <View
+        android:layout_width="32dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="@color/outline_variant" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Penerimaan Bahan Baku"
+        android:textColor="@color/secondary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:hint="Nama Supplier"
+        app:boxStrokeColor="@color/secondary"
+        app:hintTextColor="@color/secondary">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_dialog_supplier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/on_surface"
+            android:text="PT. Krakatau Steel"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:hint="Nomor Surat Jalan / Invoice"
+        app:boxStrokeColor="@color/secondary"
+        app:hintTextColor="@color/secondary">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_dialog_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/on_surface"
+            android:text="DO-998877"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:hint="Jumlah Bahan Baku (Unit)"
+        app:boxStrokeColor="@color/secondary"
+        app:hintTextColor="@color/secondary">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_dialog_qty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/on_surface"
+            android:text="100"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Action Buttons -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_dialog_receive"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="TERIMA BARANG"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/secondary"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        app:cornerRadius="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_dialog_cancel"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="BATAL"
+        android:textColor="@color/secondary"
+        app:strokeColor="@color/secondary"
+        app:cornerRadius="8dp" />
+
+</LinearLayout>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Supervisor Monitoring Dashboard - Industrial OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "tertiary-fixed-dim": "#dbc3a6",
+                            "on-primary": "#ffffff",
+                            "on-background": "#1b1c1d",
+                            "on-secondary-container": "#406b71",
+                            "surface-dim": "#dbd9db",
+                            "error": "#ba1a1a",
+                            "inverse-on-surface": "#f2f0f1",
+                            "background": "#fbf9fa",
+                            "on-surface-variant": "#44474c",
+                            "surface-container-lowest": "#ffffff",
+                            "on-tertiary-fixed": "#261907",
+                            "surface-variant": "#e4e2e3",
+                            "on-tertiary-container": "#a38d74",
+                            "error-container": "#ffdad6",
+                            "surface-container-high": "#eae7e9",
+                            "on-error-container": "#93000a",
+                            "secondary-fixed": "#bdeaf2",
+                            "primary": "#061625",
+                            "secondary-container": "#bdeaf2",
+                            "on-primary-fixed": "#0d1d2b",
+                            "inverse-primary": "#b8c8dc",
+                            "secondary-fixed-dim": "#a2ced5",
+                            "surface": "#fbf9fa",
+                            "primary-fixed": "#d4e4f8",
+                            "surface-container": "#efedee",
+                            "on-error": "#ffffff",
+                            "secondary": "#3a656b",
+                            "inverse-surface": "#303032",
+                            "on-primary-fixed-variant": "#394858",
+                            "outline-variant": "#c4c6cc",
+                            "surface-bright": "#fbf9fa",
+                            "on-secondary-fixed-variant": "#204d53",
+                            "on-primary-container": "#8392a5",
+                            "tertiary-fixed": "#f8dec1",
+                            "on-tertiary": "#ffffff",
+                            "surface-tint": "#516071",
+                            "on-tertiary-fixed-variant": "#55442e",
+                            "surface-container-low": "#f5f3f4",
+                            "on-surface": "#1b1c1d",
+                            "outline": "#74777c",
+                            "on-secondary": "#ffffff",
+                            "on-secondary-fixed": "#001f23",
+                            "primary-fixed-dim": "#b8c8dc",
+                            "primary-container": "#1c2b3a",
+                            "tertiary": "#1f1303",
+                            "surface-container-highest": "#e4e2e3",
+                            "tertiary-container": "#362714"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "component-padding-x": "16px",
+                            "margin-tablet": "24px",
+                            "base": "4px",
+                            "gutter": "16px",
+                            "component-padding-y": "12px",
+                            "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                            "headline-sm": [
+                                    "Hanken Grotesk"
+                            ],
+                            "headline-lg": [
+                                    "Hanken Grotesk"
+                            ],
+                            "label-md": [
+                                    "JetBrains Mono"
+                            ],
+                            "body-md": [
+                                    "Work Sans"
+                            ],
+                            "headline-md": [
+                                    "Hanken Grotesk"
+                            ],
+                            "headline-lg-mobile": [
+                                    "Hanken Grotesk"
+                            ],
+                            "body-lg": [
+                                    "Work Sans"
+                            ]
+                    },
+                    "fontSize": {
+                            "headline-sm": [
+                                    "20px",
+                                    {
+                                            "lineHeight": "28px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "headline-lg": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "40px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "label-md": [
+                                    "12px",
+                                    {
+                                            "lineHeight": "16px",
+                                            "letterSpacing": "0.05em",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "body-md": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "20px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "headline-md": [
+                                    "24px",
+                                    {
+                                            "lineHeight": "32px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "headline-lg-mobile": [
+                                    "28px",
+                                    {
+                                            "lineHeight": "36px",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "fontWeight": "400"
+                                    }
+                            ]
+                    }
+            },
+                },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fbf9fa; /* background */
+            color: #1b1c1d; /* on-background */
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background pb-[80px] md:pb-0 md:pt-[56px] min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-primary dark:bg-primary-container shadow-[0px_4px_12px_rgba(28,43,58,0.12)] fixed full-width top-0 w-full z-50 md:flex flex justify-between items-center px-margin-mobile h-14">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-primary" data-icon="factory">factory</span>
+<span class="text-headline-sm font-headline-sm font-bold tracking-tight text-on-primary">INDUSTRIAL OS</span>
+</div>
+<!-- Desktop Navigation Cluster (Hidden on mobile) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="flex flex-col items-center gap-1 group text-on-primary/70 hover:text-on-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform duration-200" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 group text-on-primary/70 hover:text-on-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform duration-200" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-label-md text-label-md">Operations</span>
+</a>
+<a class="flex flex-col items-center gap-1 group text-on-primary/70 hover:text-on-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform duration-200" data-icon="barcode_scanner">barcode_scanner</span>
+<span class="font-label-md text-label-md">Scan</span>
+</a>
+<a class="flex flex-col items-center gap-1 group text-on-primary font-bold" href="#">
+<span class="material-symbols-outlined text-secondary-fixed scale-110" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-label-md">Supervisor</span>
+</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden border border-outline/30">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A close-up portrait of a male factory supervisor wearing safety glasses and a hard hat. The setting is an industrial control room with muted, high-contrast lighting. The overall mood is serious and professional, utilizing a color palette of deep navies, teals, and stark whites typical of a modern manufacturing facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX2X837TMXnatDr_Yi-HT5MCeYjfZuJRBT7vURJ7IoicRVmvjH1B4DkCGtrpP6U4oxzuvm15Y-OFwQUmgj1JGfaebEf5DWGAwn4l6NzjyxA_ufhOvgw-nQhn6x7lsRaFGUwLIRLCM2TV-tvkWBLfcUDZUryC53IROPz7HJlZ7yzpCwJJltdPezjN3WzVFfgHOSU2NbAgspHIjG4nA1jn5JNIDtugCddlcy3EE4i8xQ2qB-8x-7kSO1k4YU1VV_Y30sCGl41ojl3O8"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 p-margin-mobile md:p-margin-tablet pt-20 md:pt-margin-tablet max-w-7xl mx-auto w-full">
+<!-- Header & Filters -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">Supervisor Monitoring Dashboard</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time operational overview &amp; metric tracking.</p>
+</div>
+<div class="flex gap-3 w-full md:w-auto">
+<div class="relative w-full md:w-auto">
+<label class="font-label-md text-label-md text-on-surface-variant absolute -top-2 left-3 bg-background px-1 z-10">DATE</label>
+<div class="flex items-center border border-outline rounded-lg px-3 py-2 bg-surface w-full">
+<span class="material-symbols-outlined text-outline mr-2" data-icon="calendar_today">calendar_today</span>
+<input class="bg-transparent border-none focus:ring-0 p-0 font-body-md text-body-md text-on-surface w-full min-w-[120px] cursor-pointer" type="date" value="2023-10-27"/>
+</div>
+</div>
+<div class="relative w-full md:w-auto">
+<label class="font-label-md text-label-md text-on-surface-variant absolute -top-2 left-3 bg-background px-1 z-10">SHIFT</label>
+<div class="flex items-center border border-outline rounded-lg px-3 py-2 bg-surface w-full">
+<span class="material-symbols-outlined text-outline mr-2" data-icon="schedule">schedule</span>
+<select class="bg-transparent border-none focus:ring-0 p-0 font-body-md text-body-md text-on-surface w-full pr-6 appearance-none cursor-pointer">
+<option>Shift 1 (Morning)</option>
+<option>Shift 2 (Afternoon)</option>
+<option>Shift 3 (Night)</option>
+</select>
+<span class="material-symbols-outlined text-outline absolute right-2 pointer-events-none" data-icon="arrow_drop_down">arrow_drop_down</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Barang yang Dirakit (Progress Bar) -->
+<div class="bg-surface rounded-lg shadow-[0px_4px_12px_rgba(28,43,58,0.12)] border-t-[3px] border-secondary p-5 md:col-span-8 flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="build">build</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Barang yang Dirakit</h2>
+</div>
+<span class="font-label-md text-label-md bg-secondary-container text-on-secondary-container px-2 py-1 rounded-full">IN PROGRESS</span>
+</div>
+<div>
+<div class="flex justify-between items-end mb-2">
+<span class="font-body-md text-body-md text-on-surface-variant">Target: 15,000 Units</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-on-surface">12,450</span>
+<span class="font-body-md text-body-md text-secondary">/ 83%</span>
+</div>
+</div>
+<div class="w-full bg-surface-variant rounded-full h-3 overflow-hidden">
+<div class="bg-secondary h-3 rounded-full" style="width: 83%"></div>
+</div>
+</div>
+</div>
+<!-- Barang Masuk (Count Badge) -->
+<div class="bg-surface rounded-lg shadow-[0px_4px_12px_rgba(28,43,58,0.12)] border-t-[3px] border-primary-container p-5 md:col-span-4 flex flex-col justify-between min-h-[160px]">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="inventory_2">inventory_2</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Barang Masuk</h2>
+</div>
+</div>
+<div class="flex items-end justify-between">
+<div>
+<span class="block font-label-md text-label-md text-on-surface-variant mb-1">TODAY'S VOLUME</span>
+<div class="font-headline-lg text-headline-lg text-primary-container">4,820</div>
+</div>
+<div class="flex items-center gap-1 text-[#2e7d32] bg-[#e8f5e9] px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+<span class="font-label-md text-label-md">+12%</span>
+</div>
+</div>
+</div>
+<!-- Monitoring Pengujian Barang (Status List) -->
+<div class="bg-surface rounded-lg shadow-[0px_4px_12px_rgba(28,43,58,0.12)] border-t-[3px] border-tertiary-container p-5 md:col-span-7 flex flex-col">
+<div class="flex items-center gap-2 mb-5">
+<div class="w-8 h-8 rounded bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="science">science</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Monitoring Pengujian Barang</h2>
+</div>
+<div class="flex-1 overflow-hidden">
+<ul class="divide-y divide-surface-variant">
+<li class="py-3 flex justify-between items-center group hover:bg-surface-container-low px-2 -mx-2 rounded transition-colors">
+<div class="flex items-center gap-3">
+<span class="font-body-md text-body-md font-medium text-on-surface">Batch #AX-902</span>
+</div>
+<span class="font-label-md text-label-md bg-[#e8f5e9] text-[#2e7d32] px-3 py-1 rounded-full">PASSED</span>
+</li>
+<li class="py-3 flex justify-between items-center group hover:bg-surface-container-low px-2 -mx-2 rounded transition-colors">
+<div class="flex items-center gap-3">
+<span class="font-body-md text-body-md font-medium text-on-surface">Batch #AX-903</span>
+</div>
+<span class="font-label-md text-label-md bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full">TESTING</span>
+</li>
+<li class="py-3 flex justify-between items-center group hover:bg-surface-container-low px-2 -mx-2 rounded transition-colors">
+<div class="flex items-center gap-3">
+<span class="font-body-md text-body-md font-medium text-on-surface">Batch #BX-104</span>
+</div>
+<span class="font-label-md text-label-md bg-[#fff8e1] text-[#f57f17] px-3 py-1 rounded-full">PENDING</span>
+</li>
+<li class="py-3 flex justify-between items-center group hover:bg-surface-container-low px-2 -mx-2 rounded transition-colors">
+<div class="flex items-center gap-3">
+<span class="font-body-md text-body-md font-medium text-on-surface">Batch #CX-001</span>
+</div>
+<span class="font-label-md text-label-md bg-error-container text-on-error-container px-3 py-1 rounded-full">FAILED</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Barang yang di Packing (Progress Ring) -->
+<div class="bg-surface rounded-lg shadow-[0px_4px_12px_rgba(28,43,58,0.12)] border-t-[3px] border-secondary p-5 md:col-span-5 flex flex-col justify-between items-center text-center">
+<div class="flex items-center gap-2 mb-4 w-full justify-start">
+<div class="w-8 h-8 rounded bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="package_2">package_2</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Barang yang di Packing</h2>
+</div>
+<div class="relative w-40 h-40 flex items-center justify-center my-4">
+<!-- SVG Progress Ring -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="none" r="45" stroke="#e4e2e3" stroke-width="8"></circle>
+<circle class="text-secondary" cx="50" cy="50" fill="none" r="45" stroke="#073A40" stroke-dasharray="282.7" stroke-dashoffset="70.6" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-lg text-headline-lg text-on-surface">75%</span>
+<span class="font-label-md text-label-md text-on-surface-variant">COMPLETED</span>
+</div>
+</div>
+<div class="w-full flex justify-between px-4 mt-2 border-t border-surface-variant pt-4">
+<div class="text-left">
+<span class="block font-label-md text-label-md text-on-surface-variant">PACKED</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">8,400</span>
+</div>
+<div class="text-right">
+<span class="block font-label-md text-label-md text-on-surface-variant">TARGET</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">11,200</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-surface dark:bg-surface-container-lowest shadow-[0px_-4px_12px_rgba(28,43,58,0.08)] md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-label-md text-label-md mt-1">Operations</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="barcode_scanner">barcode_scanner</span>
+<span class="font-label-md text-label-md mt-1">Scan</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-2xl px-5 py-1 scale-90 duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-label-md mt-1">Supervisor</span>
+</a>
+</nav>
+</body></html>

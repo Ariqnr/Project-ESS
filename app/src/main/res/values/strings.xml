@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">FabricationPro</string>
+
+    <!-- Dashboard Welcomes -->
+    <string name="welcome_operator">Halo, Operator</string>
+    <string name="subtitle_operator">Lini Produksi • Sedang Bertugas</string>
+    <string name="welcome_warehouse">Halo, Staff Warehouse</string>
+    <string name="subtitle_warehouse">Manajemen Logistik (Staff Warehouse)</string>
+    <string name="welcome_supervisor">Halo, Marcus</string>
+    <string name="subtitle_supervisor">Shift A • Plant Supervisor</string>
+
+    <!-- Roles -->
+    <string name="role_operator">Operator</string>
+    <string name="role_warehouse">Warehouse</string>
+    <string name="role_supervisor">Supervisor</string>
+
+    <!-- Menu & Section Titles -->
+    <string name="menu_dashboard">Beranda</string>
+    <string name="menu_warehouse">Logistik</string>
+    <string name="menu_production">Produksi</string>
+    <string name="menu_monitoring">Monitoring</string>
+
+    <string name="title_warehouse">Manajemen Logistik &amp; Gudang</string>
+    <string name="title_production">Produksi &amp; Pengujian Kualitas</string>
+    <string name="title_logistics">Pengiriman &amp; Ekspedisi</string>
+    <string name="title_charts">Statistik Produksi &amp; Gudang</string>
+    <string name="title_feed">Log Aktivitas Terbaru</string>
+
+    <!-- Card Titles -->
+    <string name="card_receiving">Mengelola Penerimaan Barang</string>
+    <string name="card_stock">Mengelola Stok Bahan Baku</string>
+    <string name="card_store_finished">Menyimpan Barang Jadi</string>
+    <string name="card_assembly">Melakukan Perakitan Barang</string>
+    <string name="card_qc">Pengujian Kualitas (QC)</string>
+    <string name="card_packing">Melakukan Pengemasan (Packing)</string>
+    <string name="card_outbound">Memproses Pengiriman Barang</string>
+
+    <!-- Buttons -->
+    <string name="btn_authenticate">Masuk ke Sistem</string>
+    <string name="btn_export">Ekspor Laporan</string>
+    <string name="btn_start_assembly">Mulai Perakitan</string>
+    <string name="btn_start_qc">Jalankan Pengujian Otomatis</string>
+    <string name="btn_confirm_packing">Konfirmasi Packing</string>
+    <string name="btn_repair">Lakukan Perbaikan (UC-05)</string>
+
+    <!-- Hints & Items -->
+    <string name="hint_packing_locked">Akses Terkunci: Menunggu unit lulus uji kualitas</string>
+    <string name="hint_packing_ready">%1$d unit siap dikemas (Lulus QC)</string>
+    <string name="hint_charts_readonly">[ Grafik Tren Produksi • Read-Only ]</string>
+    <string name="feed_item_passed">Batch #%1$s Lulus</string>
+    <string name="feed_item_subtitle">Stasiun %1$d • OP: %2$s</string>
+
+    <!-- Status -->
+    <string name="status_qc_passed">LULUS QC</string>
+    <string name="status_qc_rejected">GAGAL QC</string>
+    <string name="log_qc_fail">UC-04: Log Kegagalan Dicatat (QC Rejected)</string>
+    <string name="log_repair_done">UC-05: Perbaikan Selesai -> Siap Uji Ulang</string>
+    <string name="log_packing_done">Packing Berhasil. Menunggu Warehouse untuk menyimpan ke gudang.</string>
+    <string name="log_shipping_done">UC-09: Stok Dipotong. Surat Jalan Dicetak untuk SN: %1$s</string>
+</resources>

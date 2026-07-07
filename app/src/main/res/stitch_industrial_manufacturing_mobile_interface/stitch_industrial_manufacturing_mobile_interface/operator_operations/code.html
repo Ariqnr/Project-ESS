@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Operator Main Menu - INDUSTRIAL OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#dbc3a6",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1b1c1d",
+                        "on-secondary-container": "#406b71",
+                        "surface-dim": "#dbd9db",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f2f0f1",
+                        "background": "#fbf9fa",
+                        "on-surface-variant": "#44474c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#261907",
+                        "surface-variant": "#e4e2e3",
+                        "on-tertiary-container": "#a38d74",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#eae7e9",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#bdeaf2",
+                        "primary": "#061625",
+                        "secondary-container": "#bdeaf2",
+                        "on-primary-fixed": "#0d1d2b",
+                        "inverse-primary": "#b8c8dc",
+                        "secondary-fixed-dim": "#a2ced5",
+                        "surface": "#fbf9fa",
+                        "primary-fixed": "#d4e4f8",
+                        "surface-container": "#efedee",
+                        "on-error": "#ffffff",
+                        "secondary": "#3a656b",
+                        "inverse-surface": "#303032",
+                        "on-primary-fixed-variant": "#394858",
+                        "outline-variant": "#c4c6cc",
+                        "surface-bright": "#fbf9fa",
+                        "on-secondary-fixed-variant": "#204d53",
+                        "on-primary-container": "#8392a5",
+                        "tertiary-fixed": "#f8dec1",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#516071",
+                        "on-tertiary-fixed-variant": "#55442e",
+                        "surface-container-low": "#f5f3f4",
+                        "on-surface": "#1b1c1d",
+                        "outline": "#74777c",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#001f23",
+                        "primary-fixed-dim": "#b8c8dc",
+                        "primary-container": "#1c2b3a",
+                        "tertiary": "#1f1303",
+                        "surface-container-highest": "#e4e2e3",
+                        "tertiary-container": "#362714"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "component-padding-x": "16px",
+                        "margin-tablet": "24px",
+                        "base": "4px",
+                        "gutter": "16px",
+                        "component-padding-y": "12px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-md": ["JetBrains Mono"],
+                        "body-md": ["Work Sans"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Utilities for Industrial OS */
+        .industrial-shadow {
+            box-shadow: 0px 4px 12px rgba(28, 43, 58, 0.12);
+        }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 16px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen pb-24 flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container w-full top-0 shadow-[0px_4px_12px_rgba(28,43,58,0.12)] flex justify-between items-center px-margin-mobile h-14 z-50 sticky">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-primary">factory</span>
+<h1 class="text-headline-sm font-headline-sm font-bold tracking-tight text-on-primary">INDUSTRIAL OS</h1>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">person</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-4xl px-margin-mobile pt-8 pb-8 flex-grow">
+<div class="mb-8 flex justify-between items-end">
+<div>
+<p class="font-label-md text-label-md text-tertiary-fixed-dim uppercase tracking-wider mb-1">Shift 1 - Line B</p>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Operations Menu</h2>
+</div>
+<div class="hidden md:flex gap-2">
+<span class="inline-flex items-center gap-1 bg-surface-container-highest px-3 py-1 rounded-full font-label-md text-label-md text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                    System Online
+                </span>
+</div>
+</div>
+<!-- Bento Grid Layout for Operator Actions -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Mengelola Penerimaan Barang -->
+<button class="group text-left bg-surface rounded-lg industrial-shadow relative overflow-hidden border-t-2 border-tertiary-fixed-dim transition-all hover:translate-y-[-2px] hover:shadow-[0px_8px_16px_rgba(28,43,58,0.16)] focus:outline-none focus:ring-2 focus:ring-[#073A40] focus:ring-offset-2 flex flex-col min-h-[160px] p-6 justify-between">
+<div class="flex justify-between items-start w-full mb-4">
+<div class="p-3 bg-primary-container rounded-lg group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-on-primary text-3xl">barcode_scanner</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Mengelola Penerimaan Barang</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Scan incoming materials, verify manifests, and log inventory to warehouse zones.</p>
+</div>
+<!-- Interactive Target Hint -->
+<div class="absolute inset-0 bg-secondary/5 opacity-0 group-active:opacity-100 transition-opacity pointer-events-none"></div>
+</button>
+<!-- Melakukan Perakitan Barang -->
+<button class="group text-left bg-surface rounded-lg industrial-shadow relative overflow-hidden border-t-2 border-tertiary-fixed-dim transition-all hover:translate-y-[-2px] hover:shadow-[0px_8px_16px_rgba(28,43,58,0.16)] focus:outline-none focus:ring-2 focus:ring-[#073A40] focus:ring-offset-2 flex flex-col min-h-[160px] p-6 justify-between">
+<div class="flex justify-between items-start w-full mb-4">
+<div class="p-3 bg-primary-container rounded-lg group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-on-primary text-3xl">construction</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Melakukan Perakitan Barang</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Access assembly schematics, log component usage, and track sub-assembly progress.</p>
+</div>
+<div class="absolute inset-0 bg-secondary/5 opacity-0 group-active:opacity-100 transition-opacity pointer-events-none"></div>
+</button>
+<!-- Menguji Barang -->
+<button class="group text-left bg-surface rounded-lg industrial-shadow relative overflow-hidden border-t-2 border-tertiary-fixed-dim transition-all hover:translate-y-[-2px] hover:shadow-[0px_8px_16px_rgba(28,43,58,0.16)] focus:outline-none focus:ring-2 focus:ring-[#073A40] focus:ring-offset-2 flex flex-col min-h-[160px] p-6 justify-between">
+<div class="flex justify-between items-start w-full mb-4">
+<div class="p-3 bg-primary-container rounded-lg group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-on-primary text-3xl">fact_check</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Menguji Barang</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Execute quality control protocols, record test metrics, and flag defects.</p>
+</div>
+<div class="absolute inset-0 bg-secondary/5 opacity-0 group-active:opacity-100 transition-opacity pointer-events-none"></div>
+</button>
+<!-- Melakukan Packing Barang -->
+<button class="group text-left bg-surface rounded-lg industrial-shadow relative overflow-hidden border-t-2 border-tertiary-fixed-dim transition-all hover:translate-y-[-2px] hover:shadow-[0px_8px_16px_rgba(28,43,58,0.16)] focus:outline-none focus:ring-2 focus:ring-[#073A40] focus:ring-offset-2 flex flex-col min-h-[160px] p-6 justify-between">
+<div class="flex justify-between items-start w-full mb-4">
+<div class="p-3 bg-primary-container rounded-lg group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-on-primary text-3xl">inventory_2</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Melakukan Packing Barang</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Generate shipping labels, finalize package weight, and stage for dispatch.</p>
+</div>
+<div class="absolute inset-0 bg-secondary/5 opacity-0 group-active:opacity-100 transition-opacity pointer-events-none"></div>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface dark:bg-surface-container-lowest text-primary dark:text-primary-fixed shadow-[0px_-4px_12px_rgba(28,43,58,0.08)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe rounded-t-xl">
+<!-- Dashboard (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-all focus:outline-none min-h-[48px] min-w-[48px]">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</button>
+<!-- Operations (Active) -->
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-2xl px-5 py-1 hover:bg-surface-container-high transition-all active:scale-90 duration-150 ease-in-out focus:outline-none min-h-[48px] min-w-[48px]">
+<span class="material-symbols-outlined fill mb-1">precision_manufacturing</span>
+<span class="font-label-md text-label-md font-bold">Operations</span>
+</button>
+<!-- Scan (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-all focus:outline-none min-h-[48px] min-w-[48px]">
+<span class="material-symbols-outlined mb-1">barcode_scanner</span>
+<span class="font-label-md text-label-md">Scan</span>
+</button>
+<!-- Supervisor (Inactive) -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline p-2 hover:bg-surface-container-high transition-all focus:outline-none min-h-[48px] min-w-[48px]">
+<span class="material-symbols-outlined mb-1">monitoring</span>
+<span class="font-label-md text-label-md">Supervisor</span>
+</button>
+</nav>
+</body></html>
