@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header Title with customized dark theme-like aesthetic but in clean light M3 -->
+        <TextView
+            android:id="@+id/tv_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Form Evaluasi Kualitas Manual"
+            android:textColor="@color/secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Question 1 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Bagaimana kondisi sambungan kabel daya utama?"
+            android:textColor="@color/on_surface"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_q1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp"
+            android:paddingStart="8dp">
+            <RadioButton
+                android:id="@+id/rb_q1_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kencang &amp; Rapi"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="13sp"
+                android:buttonTint="@color/secondary" />
+            <RadioButton
+                android:id="@+id/rb_q1_incorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Longgar / Kurang Rapi"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="13sp"
+                android:buttonTint="@color/secondary" />
+        </RadioGroup>
+
+        <!-- Question 2 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Bagaimana stabilitas tegangan output saat uji beban?"
+            android:textColor="@color/on_surface"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_q2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp"
+            android:paddingStart="8dp">
+            <RadioButton
+                android:id="@+id/rb_q2_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stabil 12V (±0.5V)"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="13sp"
+                android:buttonTint="@color/secondary" />
+            <RadioButton
+                android:id="@+id/rb_q2_incorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tidak Stabil / Fluktuatif"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="13sp"
+                android:buttonTint="@color/secondary" />
+        </RadioGroup>
+
+        <!-- Question 3 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Apakah terdapat goresan atau cacat fisik pada luar panel?"
+            android:textColor="@color/on_surface"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rg_q3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp"
+            android:paddingStart="8dp">
+            <RadioButton
+                android:id="@+id/rb_q3_correct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tidak Ada (Mulus)"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="13sp"
+                android:buttonTint="@color/secondary" />
+            <RadioButton
+                android:id="@+id/rb_q3_incorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ada Goresan / Cacat Permukaan"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="13sp"
+                android:buttonTint="@color/secondary" />
+        </RadioGroup>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="16dp">
+
+    <!-- Header Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registri Data Unit"
+        android:textColor="@color/on_surface"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daftar riwayat perakitan, pengujian, pengemasan &amp; gudang"
+        android:textColor="@color/on_surface_variant"
+        android:textSize="12sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Search Bar -->
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Cari Serial Number atau Unit..."
+        app:boxStrokeColor="@color/secondary"
+        app:hintTextColor="@color/secondary"
+        app:startIconDrawable="@android:drawable/ic_menu_search">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_search_sn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/on_surface"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Filter Toggle Group in ScrollView for premium tabs style -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_marginBottom="16dp">
+        
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/filterToggleGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_filter_all"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Semua"
+                android:textSize="12sp"
+                android:textColor="@color/toggle_text_color"
+                app:strokeColor="@color/secondary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_filter_assembled"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dirakit"
+                android:textSize="12sp"
+                android:textColor="@color/toggle_text_color"
+                app:strokeColor="@color/secondary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_filter_tested"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lulus QC"
+                android:textSize="12sp"
+                android:textColor="@color/toggle_text_color"
+                app:strokeColor="@color/secondary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_filter_packed"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dikemas"
+                android:textSize="12sp"
+                android:textColor="@color/toggle_text_color"
+                app:strokeColor="@color/secondary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_filter_stored"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gudang"
+                android:textSize="12sp"
+                android:textColor="@color/toggle_text_color"
+                app:strokeColor="@color/secondary" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+    </HorizontalScrollView>
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/ll_empty_registry"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tidak ada data unit."
+            android:textColor="@color/on_surface_variant"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- RecyclerView for Registry Items -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_registry"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>

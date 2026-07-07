@@ -18,7 +18,9 @@
         app:strokeColor="@color/outline_variant"
         app:strokeWidth="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="sans-serif-medium"
                 android:text="FabricationPro"
                 android:textColor="@color/on_surface"
                 android:textSize="28sp"
@@ -42,30 +44,23 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="4dp"
-                android:text="Azure Manufacturing Dashboard"
+                android:text="Industrial Operating System"
                 android:textColor="@color/on_surface_variant"
                 android:textSize="14sp" />
-
-            <View
-                android:layout_width="40dp"
-                android:layout_height="4dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="24dp"
-                android:background="@color/secondary" />
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:hint="Operator ID"
+                android:hint="User ID"
                 app:boxStrokeColor="@color/secondary"
                 app:hintTextColor="@color/secondary">
-
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/operatorId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/on_surface"
                     android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,13 +73,77 @@
                 app:passwordToggleEnabled="true"
                 app:boxStrokeColor="@color/secondary"
                 app:hintTextColor="@color/secondary">
-
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/accessCode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/on_surface"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="PILIH PERAN"
+                android:textColor="@color/secondary"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/roleToggleGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:singleSelection="true"
+                app:selectionRequired="true"
+                app:checkedButton="@+id/btnRoleOperator">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRoleOperator"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Operator"
+                    android:textColor="@color/toggle_text_color"
+                    android:textAllCaps="false"
+                    android:textSize="10sp"
+                    android:paddingHorizontal="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRoleWarehouse"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:text="Warehouse"
+                    android:textColor="@color/toggle_text_color"
+                    android:textAllCaps="false"
+                    android:textSize="10sp"
+                    android:paddingHorizontal="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRoleSupervisor"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:text="Supervisor"
+                    android:textColor="@color/toggle_text_color"
+                    android:textAllCaps="false"
+                    android:textSize="10sp"
+                    android:paddingHorizontal="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_authenticate"
@@ -92,21 +151,12 @@
                 android:layout_height="56dp"
                 android:layout_marginTop="32dp"
                 android:backgroundTint="@color/tertiary"
-                android:text="Masuk ke Sistem"
+                android:text="Authenticate"
+                android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:cornerRadius="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="24dp"
-                android:text="Lupa Kode Akses?"
-                android:textColor="@color/secondary"
-                android:textSize="12sp"
-                android:textStyle="bold" />
 
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
@@ -115,7 +165,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="v3.1.0-azure-stable"
+        android:text="v3.2.1-compliance-stable"
         android:textColor="@color/outline"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"

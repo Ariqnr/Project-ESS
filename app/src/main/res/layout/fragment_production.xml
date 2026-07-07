@@ -15,20 +15,49 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Menu Produksi"
+            android:text="Produksi &amp; Pengujian Kualitas"
             android:textColor="@color/on_surface"
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="Antrian Tugas &amp; Kontrol Kualitas"
-            android:textColor="@color/on_surface_variant" />
-
         <!-- Perakitan Section -->
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_assembly_module"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/outline_variant"
+            app:strokeWidth="1dp">
+            <LinearLayout
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Melakukan Perakitan Barang"
+                    android:textColor="@color/on_surface"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_action_assembly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Mulai Perakitan"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/tertiary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- QC Section -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_qc_module"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -37,53 +66,32 @@
             app:cardElevation="0dp"
             app:strokeColor="@color/outline_variant"
             app:strokeWidth="1dp">
-
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:padding="16dp"
                 android:orientation="vertical"
-                android:padding="16dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Perakitan Barang"
-                        android:textColor="@color/on_surface"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_alignParentEnd="true"
-                        android:src="@android:drawable/ic_menu_manage"
-                        app:tint="@color/tertiary"
-                        android:contentDescription="Assembly Icon" />
-                </RelativeLayout>
-
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="12 Tugas Menunggu"
-                    android:textColor="@color/on_surface_variant"
-                    android:textSize="12sp"
-                    android:layout_marginBottom="16dp" />
-
+                    android:text="Pengujian Kualitas (QC)"
+                    android:textColor="@color/on_surface"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_start_assembly"
+                    android:id="@+id/btn_action_qc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Buka Panduan Perakitan"
-                    android:backgroundTint="@color/tertiary"
-                    app:cornerRadius="8dp" />
+                    android:layout_marginTop="12dp"
+                    android:text="Jalankan Pengujian Otomatis"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/secondary" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- QC Section -->
+        <!-- Packing Section (Conditional Logic applied in Fragment) -->
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_packing_module"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/white"
@@ -91,51 +99,35 @@
             app:cardElevation="0dp"
             app:strokeColor="@color/outline_variant"
             app:strokeWidth="1dp">
-
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:padding="16dp"
                 android:orientation="vertical"
-                android:padding="16dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Pengujian QC"
-                        android:textColor="@color/on_surface"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_alignParentEnd="true"
-                        android:src="@android:drawable/checkbox_on_background"
-                        app:tint="@color/secondary"
-                        android:contentDescription="QC Icon" />
-                </RelativeLayout>
-
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Uji fungsionalitas &amp; presisi unit"
-                    android:textColor="@color/on_surface_variant"
-                    android:textSize="12sp"
-                    android:layout_marginBottom="16dp" />
-
+                    android:text="Melakukan Packing"
+                    android:textColor="@color/on_surface"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_start_qc"
+                    android:id="@+id/btn_action_packing"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Mulai Pengujian"
-                    android:textColor="@color/secondary"
-                    app:strokeColor="@color/secondary"
-                    app:strokeWidth="1dp"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    app:cornerRadius="8dp" />
+                    android:layout_marginTop="12dp"
+                    android:text="Konfirmasi Packing"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/primary"
+                    android:enabled="false" /> <!-- Disabled by default per Activity Diagram -->
+                <TextView
+                    android:id="@+id/tv_packing_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Menunggu barang lolos uji kualitas..."
+                    android:textColor="@color/error"
+                    android:textSize="11sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 

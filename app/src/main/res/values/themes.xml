@@ -1,9 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Infrastruktur" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Infrastruktur" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/secondary</item>
+        <item name="colorSecondary">@color/tertiary</item>
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="Theme.Infrastruktur" parent="Base.Theme.Infrastruktur" />
+
+    <!-- Style untuk FAB Kotak Tumpul sesuai foto kedua -->
+    <style name="ShapeAppearance.FabricationPro.FAB" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">14dp</item>
+    </style>
 </resources>

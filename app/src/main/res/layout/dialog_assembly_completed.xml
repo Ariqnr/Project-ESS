@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perakitan Unit Selesai!"
+        android:textColor="@color/on_surface"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unit Panel-X2 telah terdaftar dengan Serial Number:"
+        android:textColor="@color/on_surface_variant"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/tv_dialog_sn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SN-000000"
+        android:textColor="@color/secondary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp" />
+
+    <!-- QR Code Container Card to make it look extremely premium -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/outline_variant"
+        app:strokeWidth="1dp">
+        
+        <ImageView
+            android:id="@+id/img_dialog_qr"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_margin="12dp"
+            android:contentDescription="QR Code Serial Number" />
+            
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_dialog_download_qr"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="UNDUH QR CODE"
+        android:textColor="@color/secondary"
+        app:strokeColor="@color/secondary"
+        android:layout_marginBottom="8dp"
+        app:cornerRadius="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_dialog_close"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="SELESAI"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/tertiary"
+        app:cornerRadius="8dp" />
+
+</LinearLayout>

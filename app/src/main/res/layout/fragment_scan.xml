@@ -32,23 +32,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
+            <com.journeyapps.barcodescanner.DecoratedBarcodeView
+                android:id="@+id/barcode_scanner"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:alpha="0.6"
-                android:scaleType="centerCrop"
-                android:src="@android:drawable/ic_dialog_map"
-                android:contentDescription="Camera Feed" />
-
-            <!-- Simulated Reticle -->
-            <View
-                android:layout_width="200dp"
-                android:layout_height="120dp"
-                android:layout_gravity="center"
-                android:background="@drawable/border_outline"
-                android:alpha="0.5" />
+                android:layout_height="match_parent" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_flashlight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
@@ -60,6 +50,17 @@
                 android:contentDescription="Flashlight" />
         </FrameLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_scan_gallery"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="24dp"
+        android:text="PILIH QR DARI GALERI"
+        android:textColor="@color/secondary"
+        app:strokeColor="@color/secondary"
+        app:cornerRadius="8dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -77,6 +78,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/et_scan_barcode"
             android:layout_width="0dp"
             android:layout_height="56dp"
             android:layout_weight="1"
@@ -88,6 +90,7 @@
             android:importantForAutofill="no" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_search_barcode"
             android:layout_width="wrap_content"
             android:layout_height="56dp"
             android:layout_marginStart="12dp"

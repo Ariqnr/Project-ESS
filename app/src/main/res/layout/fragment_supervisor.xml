@@ -83,6 +83,7 @@
                     android:gravity="center"
                     android:orientation="horizontal">
                     <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/progress_stock_circular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:progress="70"
@@ -96,6 +97,7 @@
                         android:layout_marginStart="24dp"
                         android:orientation="vertical">
                         <TextView
+                            android:id="@+id/tv_stock_total_units"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="1,240 Units"
@@ -103,6 +105,7 @@
                             android:textSize="18sp"
                             android:textStyle="bold" />
                         <TextView
+                            android:id="@+id/tv_stock_raw_percentage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Bahan Baku (70%)"
@@ -149,6 +152,7 @@
                         android:textColor="@color/on_surface"
                         android:textStyle="bold" />
                     <TextView
+                        android:id="@+id/tv_production_percentage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -157,6 +161,7 @@
                         android:textStyle="bold" />
                 </RelativeLayout>
                 <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progress_production_timeline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:progress="75"
@@ -189,31 +194,71 @@
                     android:textStyle="bold"
                     android:layout_marginBottom="16dp"/>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:background="@color/primary_container"
-                    android:alpha="0.3">
-                    <!-- Placeholder for Chart -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:text="[ Line Chart Mockup ]"
-                        android:textColor="@color/secondary"
-                        android:textSize="10sp" />
-                </RelativeLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-                    <View android:layout_width="8dp" android:layout_height="8dp" android:background="@color/secondary" android:layout_marginEnd="4dp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lulus QC" android:textSize="10sp" android:layout_marginEnd="16dp"/>
-                    <View android:layout_width="8dp" android:layout_height="8dp" android:background="@color/error" android:alpha="0.6" android:layout_marginEnd="4dp"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Gagal QC" android:textSize="10sp"/>
+                    android:layout_height="140dp"
+                    android:orientation="horizontal"
+                    android:gravity="bottom|center_horizontal"
+                    android:padding="8dp">
+
+                    <!-- Bar Lulus QC -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal|bottom"
+                        android:layout_marginEnd="48dp">
+                        <TextView
+                            android:id="@+id/tv_chart_passed_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/green_status_text"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <View
+                            android:id="@+id/view_chart_passed_bar"
+                            android:layout_width="50dp"
+                            android:layout_height="10dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/green_status_bg" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Lulus QC"
+                            android:textSize="11sp"
+                            android:textColor="@color/on_surface_variant" />
+                    </LinearLayout>
+
+                    <!-- Bar Gagal QC -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal|bottom">
+                        <TextView
+                            android:id="@+id/tv_chart_rejected_val"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/error"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <View
+                            android:id="@+id/view_chart_rejected_bar"
+                            android:layout_width="50dp"
+                            android:layout_height="10dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@color/error_container" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Gagal QC"
+                            android:textSize="11sp"
+                            android:textColor="@color/on_surface_variant" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
