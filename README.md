@@ -81,7 +81,7 @@ graph TD
 
 ## Vidio
 Link Video
-Tugas Besar Pemogramman Mobile ([https://youtu.be/nslY2Iz2sk4](https://youtu.be/CAv930pe3OU))
+Tugas Besar Pemogramman Mobile (https://youtu.be/CAv930pe3OU)
 
 Anggota:
 1. Ariq Naufal Rabbani - 24552011302 - Beckend
