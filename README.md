@@ -76,3 +76,14 @@ graph TD
 * **Penyimpanan Lokal**: Room Database (SQLite) dengan Coroutines Flow untuk sinkronisasi data real-time.
 * **Desain UI/UX**: Google Material Design 3 (M3) dengan warna kustom *Industrial Clarity* berdaya kontras tinggi.
 * **Pustaka Scanner**: ZXing Android Embedded untuk kamera viewfinder, dan ZXing Core untuk pembacaan QR galeri offline.
+
+---
+
+## Vidio
+Link Video
+Tugas Besar Pemogramman Mobile (https://youtu.be/nslY2Iz2sk4)
+
+Anggota:
+1. Ariq Naufal Rabbani - 24552011302 - Beckend
+2. Alif Ihsan Syamil - 24552011299 - Frontend
+3. Donny Ahmad Gunawan - 24552011172 - Testing
